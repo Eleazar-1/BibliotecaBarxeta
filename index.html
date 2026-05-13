@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Municipal de Barxeta</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body class="light">
+
+<header class="header">
+    <div class="logo">
+        <span class="logo-icon">📚</span>
+        <span class="logo-text">Biblioteca Municipal de Barxeta</span>
+    </div>
+
+    <nav class="nav">
+        <a data-i18n="menu_inici" href="#inici">Inici</a>
+        <a data-i18n="menu_noticies" href="#noticies">Notícies</a>
+        <a data-i18n="menu_activitats" href="#activitats">Activitats</a>
+        <a data-i18n="menu_serveis" href="#serveis">Serveis</a>
+        <a data-i18n="menu_fotos" href="#fotos">Fotos</a>
+        <a data-i18n="menu_contacte" href="#contacte">Contacte</a>
+    </nav>
+
+    <div class="actions">
+        <select id="langSelector" class="lang-select">
+            <option value="ca">Valencià</option>
+            <option value="es">Español</option>
+            <option value="en">English</option>
+        </select>
+
+        <button id="themeToggle" class="theme-btn" aria-label="Canviar tema">
+            <span id="themeIcon">🌙</span>
+        </button>
+    </div>
+</header>
+
+<main>
+
+<section id="inici" class="hero">
+    <div class="hero-content">
+        <h1 data-i18n="hero_titol">
+            Un espai viu de lectura i cultura a Barxeta
+        </h1>
+        <p data-i18n="hero_subtitol">
+            Descobreix llibres, activitats, tallers i molt més a la Biblioteca Municipal de Barxeta.
+        </p>
+        <div class="hero-buttons">
+            <a href="#noticies" class="btn primary" data-i18n="btn_veure_noticies">Veure notícies</a>
+            <a href="#activitats" class="btn secondary" data-i18n="btn_veure_activitats">Activitats</a>
+        </div>
+    </div>
+    <div class="hero-graphic">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+    </div>
+</section>
+
+<section id="noticies" class="section">
+    <div class="section-header">
+        <h2 data-i18n="noticies_titol">Últimes notícies</h2>
+        <p data-i18n="noticies_subtitol">
+            Mantén-te al dia de tot el que passa a la biblioteca.
+        </p>
+    </div>
+
+    <div class="cards">
+        <article class="card">
+            <span class="tag" data-i18n="etiqueta_infantil">Infantil</span>
+            <h3 data-i18n="noticia1_titol">Nova activitat de contacontes</h3>
+            <p data-i18n="noticia1_text">
+                Dissabte a les 11:00, contacontes per a xiquets i xiquetes de 4 a 8 anys.
+            </p>
+            <p class="meta" data-i18n="noticia1_data">Data: 25 de maig de 2026</p>
+        </article>
+
+        <article class="card">
+            <span class="tag" data-i18n="etiqueta_adults">Adults</span>
+            <h3 data-i18n="noticia2_titol">Club de lectura d’adults</h3>
+            <p data-i18n="noticia2_text">
+                Obrim inscripcions per al nou club de lectura mensual per a adults.
+            </p>
+            <p class="meta" data-i18n="noticia2_data">Data: 30 de maig de 2026</p>
+        </article>
+
+        <article class="card">
+            <span class="tag" data-i18n="etiqueta_general">General</span>
+            <h3 data-i18n="noticia3_titol">Novetats al catàleg</h3>
+            <p data-i18n="noticia3_text">
+                Ja disponibles les últimes novetats editorials en narrativa i còmic.
+            </p>
+            <p class="meta" data-i18n="noticia3_data">Data: 5 de juny de 2026</p>
+        </article>
+    </div>
+</section>
+
+<section id="fotos" class="section alt">
+    <div class="section-header">
+        <h2 data-i18n="fotos_titol">Fotos de la biblioteca</h2>
+        <p data-i18n="fotos_subtitol">
+            Una mirada visual als espais i activitats de la Biblioteca Municipal de Barxeta.
+        </p>
+    </div>
+
+    <div class="photos-grid">
+        <figure class="photo-card">
+            <img src="/img/foto1.png" alt="Foto 1 - Biblioteca Municipal de Barxeta">
+            <p>Sala de lectura principal.</p>
+        </figure>
+        <figure class="photo-card">
+            <img src="/img/foto2.png" alt="Foto 2 - Biblioteca Municipal de Barxeta">
+            <p>Racó infantil de contacontes.</p>
+        </figure>
+        <figure class="photo-card">
+            <img src="/img/foto3.png" alt="Foto 3 - Biblioteca Municipal de Barxeta">
+            <p>Zona d’estudi i treball.</p>
+        </figure>
+        <figure class="photo-card">
+            <img src="/img/foto4.png" alt="Foto 4 - Biblioteca Municipal de Barxeta">
+            <p>La biblioteca de Barxeta.</p>
+        </figure>
+    </div>
+</section>
+
+<section id="serveis" class="section">
+    <div class="section-header">
+        <h2 data-i18n="serveis_titol">Serveis de la biblioteca</h2>
+        <p data-i18n="serveis_subtitol">
+            Recursos i espais pensats per a tu.
+        </p>
+    </div>
+
+    <div class="services-grid">
+        <div class="service">
+            <h3 data-i18n="servei1_titol">Préstec de llibres</h3>
+            <p data-i18n="servei1_text">
+                Accés a una àmplia col·lecció de llibres, còmics i revistes.
+            </p>
+        </div>
+        <div class="service">
+            <h3 data-i18n="servei2_titol">Sala d’estudi</h3>
+            <p data-i18n="servei2_text">
+                Espai tranquil per estudiar, treballar o llegir.
+            </p>
+        </div>
+        <div class="service">
+            <h3 data-i18n="servei3_titol">Accés a internet</h3>
+            <p data-i18n="servei3_text">
+                Ordinadors amb connexió i Wi-Fi gratuït per a usuaris.
+            </p>
+        </div>
+        <div class="service">
+            <h3 data-i18n="servei4_titol">Activitats culturals</h3>
+            <p data-i18n="servei4_text">
+                Tallers, xarrades, presentacions de llibres i més.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="activitats" class="section alt">
+    <div class="section-header">
+        <h2 data-i18n="activitats_titol">Activitats destacades</h2>
+        <p data-i18n="activitats_subtitol">
+            Propostes per a totes les edats: participa i viu la biblioteca.
+        </p>
+    </div>
+
+    <div class="activities-grid">
+        <div class="activity">
+            <h3 data-i18n="act1_titol">Taller infantil de lectura</h3>
+            <p data-i18n="act1_text">
+                Sessions setmanals per fomentar l’hàbit lector entre els més menuts.
+            </p>
+        </div>
+        <div class="activity">
+            <h3 data-i18n="act2_titol">Club de lectura</h3>
+            <p data-i18n="act2_text">
+                Lectura compartida i debat sobre obres seleccionades mensualment.
+            </p>
+        </div>
+        <div class="activity">
+            <h3 data-i18n="act3_titol">Exposicions temàtiques</h3>
+            <p data-i18n="act3_text">
+                Mostres temporals de llibres, còmics i materials relacionats amb diferents temes.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="contacte" class="section">
+    <div class="section-header">
+        <h2 data-i18n="contacte_titol">Contacte</h2>
+        <p data-i18n="contacte_subtitol">
+            Vine a visitar-nos o posa’t en contacte amb nosaltres.
+        </p>
+    </div>
+
+    <div class="contact-grid">
+        <div class="contact-info">
+            <p data-i18n="contacte_adreca">
+                Adreça: Plaça de l’Ajuntament, Barxeta
+            </p>
+            <p data-i18n="contacte_horari">
+                Horari: Dilluns - Divendres, 9:00 - 20:00
+            </p>
+            <p data-i18n="contacte_telefon">
+                Telèfon: 96 000 00 00
+            </p>
+            <p data-i18n="contacte_email">
+                Correu: biblioteca@barxeta.es
+            </p>
+        </div>
+        <div class="contact-note">
+            <p data-i18n="contacte_nota">
+                Pregunta pel personal de la biblioteca per informar-te sobre activitats, inscripcions i préstecs.
+            </p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <p>© 2026 Biblioteca Municipal de Barxeta</p>
+</footer>
+
+</body>
+</html>

@@ -266,3 +266,41 @@ window.addEventListener("DOMContentLoaded", () => {
     applyLanguage(savedLang);
     setTheme(savedTheme);
 });
+
+async function carregarNoticiesCMS() {
+    const container = document.getElementById("cms-news");
+    if (!container) return;
+
+    try {
+        const res = await fetch("/posts/");
+        const html = await res.text();
+
+        // Extraure noms dels fitxers .md
+        const files = [...html.matchAll(/href="([^"]+\.md)"/g)].map(m => m[1]);
+
+        for (const file of files) {
+            const postRes = await fetch("/posts/" + file);
+            const postText = await postRes.text();
+
+            // Convertir Markdown simple a HTML
+            const title = postText.match(/title:\s*"(.*)"/)?.[1] || "Notícia";
+            const date = postText.match(/date:\s*(.*)/)?.[1] || "";
+            const body = postText.split("---").pop();
+
+            const card = document.createElement("article");
+            card.className = "card";
+            card.innerHTML = `
+                <span class="tag">Nova</span>
+                <h3>${title}</h3>
+                <p>${body}</p>
+                <p class="meta">${date}</p>
+            `;
+
+            container.appendChild(card);
+        }
+    } catch (e) {
+        console.error("Error carregant notícies CMS:", e);
+    }
+}
+
+carregarNoticiesCMS();
